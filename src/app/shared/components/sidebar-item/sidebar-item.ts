@@ -5,7 +5,10 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router'
   selector: 'sidebar-item',
   imports: [RouterLink, RouterLinkActive],
   templateUrl: './sidebar-item.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    class: 'grow'
+  }
 })
 export class SidebarItem {
   router = inject(Router)

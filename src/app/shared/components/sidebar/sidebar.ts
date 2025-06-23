@@ -9,7 +9,7 @@ import { SidebarItem } from '../sidebar-item/sidebar-item'
   templateUrl: './sidebar.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    class: 'bg-grey-900 flex flex-col gap-16 py-8 w-full md:h-dvh fixed bottom-0 md:static overflow-hidden'
+    class: 'bg-grey-900 flex flex-col gap-16 md:py-8 w-full md:h-dvh fixed bottom-0 md:static overflow-hidden rounded-t-2xl md:rounded-t-none md:rounded-r-2xl'
   }
 })
 export class Sidebar {

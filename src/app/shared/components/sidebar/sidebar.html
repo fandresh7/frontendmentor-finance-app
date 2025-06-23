@@ -5,7 +5,7 @@
 </div>
 
 <nav class="text-preset-3 text-grey-300 grow">
-  <ul class="flex flex-col pr-8">
+  <ul class="flex flex-row justify-between md:flex-col items-center md:items-stretch pt-3 px-2 sm:px-4 md:pt-0 md:px-0 md:pr-8">
     <sidebar-item
       label="Overview"
       link="/"
@@ -36,7 +36,7 @@
 </nav>
 
 <button
-  class="text-preset-3 flex items-center gap-4 text-grey-300 hover:text-grey-100 transition-colors duration-300 px-8 cursor-pointer"
+  class="hidden md:flex text-preset-3 items-center gap-4 text-grey-300 hover:text-grey-100 transition-colors duration-300 px-8 cursor-pointer"
   (click)="toggle()">
   <back-icon class="block size-5" />
   <span>Minimize Menu</span>

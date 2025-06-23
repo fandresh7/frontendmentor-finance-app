@@ -1,13 +1,14 @@
 <li
   [attr.aria-label]="label()"
   [routerLink]="link()"
-  routerLinkActive="bg-beige-100 text-grey-900 hover:text-grey-900 before:content-[''] before:absolute before:left-0 before:top-0 before:w-1 before:h-full before:bg-green"
+  routerLinkActive="bg-beige-100 text-grey-900 hover:text-grey-900 before:content-[''] before:absolute before:left-0 before:bottom-0 md:before:top-0 before:w-full md:before:w-1 before:h-1.5 md:before:h-full before:bg-green"
   [routerLinkActiveOptions]="{exact: exactMatch()}"
-  class="relative flex items-center gap-4 pl-8 py-3 cursor-pointer rounded-r-xl transition-colors duration-300 hover:text-grey-100">
+  class="relative flex flex-col md:flex-row items-center gap-1.5 pt-2.5 pb-3.5 md:gap-4 md:pl-8 md:px-0 md:py-3 cursor-pointer rounded-t-lg md:rounded-t-none md:rounded-r-xl transition-colors duration-300 hover:text-grey-100">
   <div
     class="size-5"
     [class.text-green]="router.isActive(link(), exactMatch())">
     <ng-content></ng-content>
   </div>
-  <span>{{ label() }}</span>
+  <span class="hidden sm:block text-preset-5-bold md:hidden">{{ label() }}</span>
+  <span class="hidden md:block text-preset-3">{{ label() }}</span>
 </li>

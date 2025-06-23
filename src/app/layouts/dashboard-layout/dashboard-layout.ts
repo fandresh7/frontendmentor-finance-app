@@ -9,7 +9,7 @@ import { CollapseSidebar } from '@shared/services/collapse-sidebar'
   templateUrl: './dashboard-layout.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    '[class]': "'h-dvh w-dvw grid overflow-hidden transition-[grid-template-columns] duration-500 grid-cols-[0px_1fr] ' + (collapsed() ? '' : 'md:grid-cols-[260px_1fr]')"
+    '[class]': "'h-dvh w-dvw grid overflow-hidden transition-[grid-template-columns] duration-500 grid-cols-1 ' + (collapsed() ? '' : 'md:grid-cols-[260px_1fr]')"
   }
 })
 export class DashboardLayout {
