@@ -1,0 +1,13 @@
+<li
+  [attr.aria-label]="label()"
+  [routerLink]="link()"
+  routerLinkActive="bg-beige-100 text-grey-900 hover:text-grey-900 before:content-[''] before:absolute before:left-0 before:top-0 before:w-1 before:h-full before:bg-green"
+  [routerLinkActiveOptions]="{exact: exactMatch()}"
+  class="relative flex items-center gap-4 pl-8 py-3 cursor-pointer rounded-r-xl transition-colors duration-300 hover:text-grey-100">
+  <div
+    class="size-5"
+    [class.text-green]="router.isActive(link(), exactMatch())">
+    <ng-content></ng-content>
+  </div>
+  <span>{{ label() }}</span>
+</li>

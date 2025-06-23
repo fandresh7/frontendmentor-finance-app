@@ -1,1 +1,43 @@
-<p>sidebar works!</p>
+<div class="hidden md:block px-8">
+  <img
+    src="./images/logo.svg"
+    alt="logo" />
+</div>
+
+<nav class="text-preset-3 text-grey-300 grow">
+  <ul class="flex flex-col pr-8">
+    <sidebar-item
+      label="Overview"
+      link="/"
+      [exactMatch]="true">
+      <home-icon />
+    </sidebar-item>
+    <sidebar-item
+      label="Transactions"
+      link="/transactions">
+      <transactions-icon />
+    </sidebar-item>
+    <sidebar-item
+      label="Budgets"
+      link="/budgets">
+      <budgets-icon />
+    </sidebar-item>
+    <sidebar-item
+      label="Pots"
+      link="/pots">
+      <pots-icon />
+    </sidebar-item>
+    <sidebar-item
+      label="Recurring Bills"
+      link="/recurring-bills">
+      <recurrent-bills-icon />
+    </sidebar-item>
+  </ul>
+</nav>
+
+<button
+  class="text-preset-3 flex items-center gap-4 text-grey-300 hover:text-grey-100 transition-colors duration-300 px-8 cursor-pointer"
+  (click)="toggle()">
+  <back-icon class="block size-5" />
+  <span>Minimize Menu</span>
+</button>
