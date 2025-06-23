@@ -1,11 +1,11 @@
-<div class="hidden md:block px-8">
+<div class="hidden px-8 md:block">
   <img
     src="./images/logo.svg"
     alt="logo" />
 </div>
 
 <nav class="text-preset-3 text-grey-300 grow">
-  <ul class="flex flex-row justify-between md:flex-col items-center md:items-stretch pt-3 px-2 sm:px-4 md:pt-0 md:px-0 md:pr-8">
+  <ul class="flex flex-row items-center justify-between px-2 pt-3 sm:px-4 md:flex-col md:items-stretch md:px-0 md:pt-0 md:pr-8">
     <sidebar-item
       label="Overview"
       link="/"
@@ -36,7 +36,7 @@
 </nav>
 
 <button
-  class="hidden md:flex text-preset-3 items-center gap-4 text-grey-300 hover:text-grey-100 transition-colors duration-300 px-8 cursor-pointer"
+  class="text-preset-3 text-grey-300 hover:text-grey-100 hidden cursor-pointer items-center gap-4 px-8 transition-colors duration-300 md:flex"
   (click)="toggle()">
   <back-icon class="block size-5" />
   <span>Minimize Menu</span>
