@@ -1,0 +1,10 @@
+<article class="relative flex items-center gap-4 pl-6">
+  <div
+    [style.backgroundColor]="color()"
+    class="absolute top-0 left-0 h-full w-1 rounded-full"></div>
+
+  <div class="flex flex-col gap-2">
+    <p class="text-preset-5 text-grey-500">{{ title() }}</p>
+    <p class="text-preset-4-bold text-grey-900">{{ amount() | currency:'USD':true:currencyFormat() }}</p>
+  </div>
+</article>
