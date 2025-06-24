@@ -1,1 +1,7 @@
-<p>card-header works!</p>
+<header>
+  <h3>{{ title() }}</h3>
+  <a [routerLink]="link()">
+    <span>See Details</span>
+    <chevron-right-icon />
+  </a>
+</header>

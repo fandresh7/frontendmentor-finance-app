@@ -1,1 +1,17 @@
-<p>summary-card works!</p>
+<article
+  class="flex flex-col gap-2 rounded-xl p-4 md:p-6"
+  [class.bg-white]="theme() === 'light'"
+  [class.bg-grey-900]="theme() === 'dark'">
+  <p
+    class="text-preset-4"
+    [class.text-grey-500]="theme() === 'light'"
+    [class.text-white]="theme() === 'dark'">
+    {{ title() }}
+  </p>
+  <p
+    class="text-preset-1"
+    [class.text-grey-900]="theme() === 'light'"
+    [class.text-white]="theme() === 'dark'">
+    {{ balance() | currency:'USD':true:'1.2-2' }}
+  </p>
+</article>
