@@ -11,4 +11,5 @@ import { ChevronRightIcon } from '../icons/icons'
 export class CardHeader {
   title = input.required<string>()
   link = input.required<string>()
+  linkText = input.required<string>()
 }

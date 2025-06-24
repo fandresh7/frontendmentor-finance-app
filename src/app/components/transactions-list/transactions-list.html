@@ -1,26 +1,52 @@
 <card>
   <card-header
     title="Transactions"
-    link="/transactions">
+    link="/transactions"
+    linkText="View All">
   </card-header>
 
   <ul
     role="list"
-    class="divide-grey-100 divide-y p-6">
+    class="divide-grey-100 mt-4 divide-y">
     <li class="py-4 first:pt-0 last:pb-0">
-      <transaction-item></transaction-item>
+      <transaction-item
+        avatar="./images/avatars/emma-richardson.jpg"
+        name="Emma Richardson"
+        [amount]="75.50"
+        date="2024-08-19T14:23:11Z">
+      </transaction-item>
     </li>
     <li class="py-4 first:pt-0 last:pb-0">
-      <transaction-item></transaction-item>
+      <transaction-item
+        avatar="./images/avatars/savory-bites-bistro.jpg"
+        name="Savory Bites Bistro"
+        [amount]="-55.50"
+        date="2024-08-19T20:23:11Z">
+      </transaction-item>
     </li>
     <li class="py-4 first:pt-0 last:pb-0">
-      <transaction-item></transaction-item>
+      <transaction-item
+        avatar="./images/avatars/daniel-carter.jpg"
+        name="Daniel Carter"
+        [amount]="-42.30"
+        date="2024-08-18T09:45:32Z">
+      </transaction-item>
     </li>
     <li class="py-4 first:pt-0 last:pb-0">
-      <transaction-item></transaction-item>
+      <transaction-item
+        avatar="./images/avatars/sun-park.jpg"
+        name="Sun Park"
+        [amount]="120.00"
+        date="2024-08-17T16:12:05Z">
+      </transaction-item>
     </li>
     <li class="py-4 first:pt-0 last:pb-0">
-      <transaction-item></transaction-item>
+      <transaction-item
+        avatar="./images/avatars/urban-services-hub.jpg"
+        name="Urban Services Hub"
+        [amount]="-65.00"
+        date="2024-08-17T21:08:09Z">
+      </transaction-item>
     </li>
   </ul>
 </card>
