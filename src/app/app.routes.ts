@@ -22,6 +22,10 @@ export const routes: Routes = [
       {
         path: 'budgets',
         loadComponent: () => import('@pages/budgets/budgets').then(m => m.Budgets)
+      },
+      {
+        path: 'recurring-bills',
+        loadComponent: () => import('@pages/recurring-bills/recurring-bills').then(m => m.RecurringBills)
       }
     ]
   },
