@@ -1,20 +1,14 @@
 <card>
   <card-header
-    title="Pots"
-    link="/pots"
+    title="Budgets"
+    link="/budgets"
     linkText="See Details">
   </card-header>
 
-  <section class="flex flex-col gap-4 xl:flex-row">
-    <div class="bg-beige-100 flex grow items-center gap-4 rounded-xl p-6">
-      <pot-icon class="text-green block size-10" />
-      <div class="flex flex-col gap-4">
-        <h3 class="text-preset-4 text-grey-500">Total Saved</h3>
-        <p class="text-preset-1 text-grey-900">{{ 850 | currency:'USD':true:'1.0-0' }}</p>
-      </div>
-    </div>
+  <div class="flex flex-col items-center gap-4 lg:flex-row">
+    <budgets-chart class="grow"></budgets-chart>
 
-    <div class="grid grow grid-cols-2 gap-4">
+    <section class="grid grid-cols-2 gap-4 lg:grid-cols-1">
       <category-item
         color="#277c78"
         title="Savings"
@@ -35,6 +29,6 @@
         title="New Laptop"
         [amount]="10">
       </category-item>
-    </div>
-  </section>
+    </section>
+  </div>
 </card>

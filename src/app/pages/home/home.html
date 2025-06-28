@@ -20,7 +20,15 @@
     </summary-card>
   </section>
 
-  <savings-pots></savings-pots>
+  <div class="flex flex-col gap-6 xl:grid xl:grid-cols-[1.5fr_1fr]">
+    <div class="flex flex-col gap-6">
+      <savings-pots></savings-pots>
+      <transactions-list></transactions-list>
+    </div>
 
-  <transactions-list></transactions-list>
+    <div class="flex flex-col gap-6">
+      <bugdets-summary-card></bugdets-summary-card>
+      <recurring-bills-summary-card></recurring-bills-summary-card>
+    </div>
+  </div>
 </section>

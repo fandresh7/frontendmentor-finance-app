@@ -1,0 +1,25 @@
+<card>
+  <card-header
+    title="Recurring Bills"
+    link="/recurring-bills"
+    linkText="See Details">
+  </card-header>
+
+  <section class="flex flex-col gap-4">
+    <bill-item
+      title="Paid Bills"
+      [amount]="190"
+      color="#277c78">
+    </bill-item>
+    <bill-item
+      title="Total Upcoming"
+      [amount]="194.98"
+      color="#F2CDAC">
+    </bill-item>
+    <bill-item
+      title="Due Soon"
+      [amount]="59.98"
+      color="#82C9D7">
+    </bill-item>
+  </section>
+</card>
