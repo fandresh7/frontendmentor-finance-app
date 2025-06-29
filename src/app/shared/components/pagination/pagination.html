@@ -1,0 +1,70 @@
+<button
+  class="group flex h-10 w-[6.5rem] min-w-10 cursor-pointer items-center justify-center gap-3 rounded-lg border transition-colors duration-300"
+  [disabled]="!hasPrev()"
+  [class.border-beige-500]="hasPrev()"
+  [class.hover:bg-beige-500]="hasPrev()"
+  [class.hover:text-white]="hasPrev()"
+  [class.opacity-50]="!hasPrev()"
+  [class.border-grey-300]="!hasPrev()"
+  (click)="currentPage.set(currentPage() - 1)"
+  (keyup.enter)="currentPage.set(currentPage() - 1)"
+  tabindex="0">
+  <chevron-right-icon
+    class="block size-3 rotate-180"
+    [class.text-grey-500]="hasPrev()"
+    [class.group-hover:text-white]="hasPrev()" />
+  <span
+    class="text-preset-4 hidden sm:block md:hidden lg:block"
+    [class.text-grey-900]="hasPrev()"
+    [class.group-hover:text-white]="hasPrev()"
+    [class.text-grey-400]="!hasPrev()">
+    Prev
+  </span>
+</button>
+
+<div class="flex items-center gap-2">
+  @for(page of pagesRange(); track $index) { @if(isNumber(page)) {
+  <div
+    class="text-grey-900 flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border transition-colors duration-300"
+    [class.border-grey-900]="page === currentPage()"
+    [class.text-white]="page === currentPage()"
+    [class.bg-grey-900]="page === currentPage()"
+    [class.cursor-not-allowed]="page === currentPage()"
+    [class.hover:text-white]="page === currentPage()"
+    [class.hover:bg-grey-900]="page === currentPage()"
+    [class.hover:bg-beige-500]="page !== currentPage()"
+    [class.hover:border-beige-500]="page !== currentPage()"
+    [class.hover:text-white]="page !== currentPage()"
+    (click)="currentPage.set(page)"
+    (keyup.enter)="currentPage.set(page)"
+    tabindex="0">
+    {{page}}
+  </div>
+  } @else {
+  <div class="text-grey-500 flex h-10 w-10 items-center justify-center rounded-lg border">{{page}}</div>
+  } }
+</div>
+
+<button
+  class="group flex h-10 w-[6.5rem] min-w-10 cursor-pointer items-center justify-center gap-3 rounded-lg border transition-colors duration-300"
+  [disabled]="!hasNext()"
+  [class.border-beige-500]="hasNext()"
+  [class.hoverdiv-beige-500]="hasNext()"
+  [class.hover:text-white]="hasNext()"
+  [class.opacity-50]="!hasNext()"
+  [class.border-grey-300]="!hasNext()"
+  (click)="currentPage.set(currentPage() + 1)"
+  (keyup.enter)="currentPage.set(currentPage() + 1)"
+  tabindex="0">
+  <span
+    class="text-preset-4 hidden sm:block md:hidden lg:block"
+    [class.text-grey-900]="hasNext()"
+    [class.group-hover:text-white]="hasNext()"
+    [class.text-grey-400]="!hasNext()">
+    Next
+  </span>
+  <chevron-right-icon
+    class="block size-3"
+    [class.text-grey-500]="hasNext()"
+    [class.group-hover:text-white]="hasNext()" />
+</button>
