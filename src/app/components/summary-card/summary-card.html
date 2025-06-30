@@ -12,6 +12,6 @@
     class="text-preset-1"
     [class.text-grey-900]="theme() === 'light'"
     [class.text-white]="theme() === 'dark'">
-    {{ balance() | currency:'USD':true:'1.2-2' }}
+    {{ balance() | currency:'USD':'symbol':'1.2-2' }}
   </p>
 </article>

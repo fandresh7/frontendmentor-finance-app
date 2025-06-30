@@ -10,7 +10,7 @@
     <p
       class="text-preset-4-bold"
       [class]="color()">
-      {{ sign() }}{{ amount() | currency:'USD':true:'1.2-2' }}
+      {{ sign() }}{{ amount() | currency:'USD':'symbol':'1.2-2' }}
     </p>
     <p class="text-preset-5 text-grey-500">{{ date() | date:'d MMM y' }}</p>
   </div>

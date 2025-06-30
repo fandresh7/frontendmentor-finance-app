@@ -3,6 +3,6 @@
   [style.backgroundColor]="color()">
   <div class="bg-beige-100 flex items-center justify-between rounded-l-sm rounded-r-lg p-4">
     <h3 class="text-preset-4 text-grey-500">{{ title() }}</h3>
-    <p class="text-preset-4-bold text-grey-900">{{ amount() | currency:'USD':true:'1.2-2' }}</p>
+    <p class="text-preset-4-bold text-grey-900">{{ amount() | currency:'USD':'symbol':'1.2-2' }}</p>
   </div>
 </article>

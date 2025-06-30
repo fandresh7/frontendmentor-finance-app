@@ -1,0 +1,41 @@
+<!-- Mobile item -->
+<td class="flex items-center justify-between p-3 md:hidden">
+  <div class="flex w-full items-center justify-between gap-2">
+    <div class="flex items-center gap-2">
+      <img
+        class="size-10 rounded-full"
+        [src]="avatar()"
+        [alt]="name()" />
+      <div>
+        <div class="text-preset-4-bold text-grey-900">{{ name() }}</div>
+        <div class="text-preset-5 text-grey-500 md:hidden">{{ category() }}</div>
+      </div>
+    </div>
+    <div>
+      <div
+        class="text-preset-4-bold text-right md:hidden"
+        [class]="color()">
+        {{ sign() }}{{ amount() | currency:'USD':'symbol':'1.2-2' }}
+      </div>
+      <div class="text-preset-5 text-grey-500 text-right md:hidden">{{ date() | date:'d MMM y' }}</div>
+    </div>
+  </div>
+</td>
+
+<!-- desktop item -->
+<td class="hidden p-3 md:table-cell md:w-full">
+  <div class="flex w-full items-center gap-2">
+    <img
+      class="size-10 rounded-full"
+      [src]="avatar()"
+      [alt]="name()" />
+    <span class="text-preset-4-bold text-grey-900 truncate">{{ name() }}</span>
+  </div>
+</td>
+<td class="text-preset-5 text-grey-500 hidden p-2 md:table-cell">{{ category() }}</td>
+<td class="text-preset-5 text-grey-500 hidden p-2 md:table-cell">{{ date() | date:'d MMM y' }}</td>
+<td
+  class="text-preset-4-bold hidden p-2 text-right md:table-cell"
+  [class]="color()">
+  {{ sign() }}{{ amount() | currency:'USD':'symbol':'1.2-2' }}
+</td>
