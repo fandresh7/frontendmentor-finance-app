@@ -8,7 +8,7 @@ import { ChevronRightIcon } from '../icons/icons'
   styleUrl: './pagination.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    class: 'flex items-center justify-between gap-4'
+    class: 'flex items-center justify-between gap-4 text-preset-4'
   }
 })
 export class Pagination {
