@@ -1,12 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core'
 
+import { TransactionsFilters } from '@components/transactions-filters/transactions-filters'
 import { TransactionRow } from '@components/transaction-row/transaction-row'
 import { Pagination } from '@shared/components/pagination/pagination'
 import { Card } from '@shared/components/card/card'
 
 @Component({
   selector: 'transactions',
-  imports: [Pagination, Card, TransactionRow],
+  imports: [Pagination, Card, TransactionRow, TransactionsFilters],
   templateUrl: './transactions.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
