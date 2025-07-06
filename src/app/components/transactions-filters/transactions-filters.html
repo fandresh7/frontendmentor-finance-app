@@ -1,14 +1,16 @@
-<section class="flex items-center gap-4">
+<section class="flex items-center gap-4 lg:grid lg:grid-cols-3">
   <div class="relative grow">
     <input
       class="border-beige-500 text-preset-4 placeholder:text-beige-500 hover:border-grey-900 hover:text-grey-900 focus:border-grey-900 focus:text-grey-900 h-12 w-full rounded-xl border px-6 leading-none focus:outline-none"
       type="text"
+      [ngModel]="search()"
+      (ngModelChange)="search.set($event)"
       placeholder="Search transactions" />
     <search-icon class="absolute top-0 right-6 bottom-0 my-auto size-4" />
   </div>
 
   <div
-    class="cursor-pointer lg:grow"
+    class="cursor-pointer"
     (click)="toggleSortBy()"
     (keydown)="toggleSortBy()"
     tabindex="0"
@@ -17,7 +19,15 @@
     <download-icon class="block size-5 lg:hidden" />
     <div class="relative hidden w-full items-center gap-2 lg:flex">
       <p class="text-grey-500 text-preset-4 text-nowrap">Sort By</p>
-      <div class="border-beige-500 hover:border-grey-900 hover:text-grey-900 focus:border-grey-900 focus:text-grey-900 h-12 w-full appearance-none rounded-xl border px-6 leading-none focus:outline-none"></div>
+      <div
+        class="border-beige-500 hover:border-grey-900 hover:text-grey-900 focus:border-grey-900 focus:text-grey-900 flex h-12 w-full appearance-none items-center rounded-xl border px-6 leading-none focus:outline-none">
+        <p
+          class="text-preset-4"
+          [class.text-beige-500]="selectedSortOption() === null"
+          [class.text-grey-900]="selectedSortOption() !== null">
+          {{ selectedSortOption() || 'Select a sort option' }}
+        </p>
+      </div>
       <chevron-down-icon
         class="absolute top-0 right-6 bottom-0 my-auto size-4 transition-transform duration-300"
         [class]="isSortByOpen() ? 'rotate-180' : ''" />
@@ -25,7 +35,7 @@
   </div>
 
   <div
-    class="relative flex cursor-pointer items-center gap-2 lg:grow"
+    class="relative flex cursor-pointer items-center gap-2"
     (click)="toggleCategory()"
     (keydown)="toggleCategory()"
     tabindex="0"
@@ -34,7 +44,15 @@
     <filter-icon class="block size-5 lg:hidden" />
     <div class="relative hidden w-full items-center gap-2 lg:flex">
       <p class="text-grey-500 text-preset-4">Category</p>
-      <div class="border-beige-500 hover:border-grey-900 hover:text-grey-900 focus:border-grey-900 focus:text-grey-900 h-12 w-full appearance-none rounded-xl border px-6 leading-none focus:outline-none"></div>
+      <div
+        class="border-beige-500 hover:border-grey-900 hover:text-grey-900 focus:border-grey-900 focus:text-grey-900 flex h-12 w-full appearance-none items-center rounded-xl border px-6 leading-none focus:outline-none">
+        <p
+          class="text-preset-4"
+          [class.text-beige-500]="selectedCategory() === null"
+          [class.text-grey-900]="selectedCategory() !== null">
+          {{ selectedCategory() || 'Select a category' }}
+        </p>
+      </div>
       <chevron-down-icon
         class="absolute top-0 right-6 bottom-0 my-auto size-4 transition-transform duration-300"
         [class]="isCategoryOpen() ? 'rotate-180' : ''" />
@@ -52,12 +70,17 @@
   (detach)="closeSortBy()">
   <div class="max-h-96 max-w-full min-w-56 overflow-y-auto rounded-xl bg-white p-4 shadow-2xl">
     <ul class="divide-grey-100 divide-y">
-      <li class="text-preset-4 cursor-pointer py-4 transition-colors duration-200 first:pt-0 last:pb-0">All Categories</li>
-      <li class="text-preset-4 cursor-pointer py-4 transition-colors duration-200 first:pt-0 last:pb-0">Food & Drink</li>
-      <li class="text-preset-4 cursor-pointer py-4 transition-colors duration-200 first:pt-0 last:pb-0">Shopping</li>
-      <li class="text-preset-4 cursor-pointer py-4 transition-colors duration-200 first:pt-0 last:pb-0">Transportation</li>
-      <li class="text-preset-4 cursor-pointer py-4 transition-colors duration-200 first:pt-0 last:pb-0">Entertainment</li>
-      <li class="text-preset-4 cursor-pointer py-4 transition-colors duration-200 first:pt-0 last:pb-0">Housing</li>
+      @for (option of sortOptions() ; track $index) {
+      <li
+        class="text-preset-4 cursor-pointer py-4 transition-colors duration-200 first:pt-0 last:pb-0"
+        (click)="selectSortOption(option)"
+        (keydown)="selectSortOption(option)"
+        tabindex="0">
+        {{ option }}
+      </li>
+      } @empty {
+      <li class="text-preset-4 cursor-pointer py-4 transition-colors duration-200 first:pt-0 last:pb-0">No sort options</li>
+      }
     </ul>
   </div>
 </ng-template>
@@ -72,12 +95,17 @@
   (detach)="closeCategory()">
   <div class="max-h-96 max-w-full min-w-56 overflow-y-auto rounded-xl bg-white p-4 shadow-2xl">
     <ul class="divide-grey-100 text-grey-900 divide-y">
-      <li class="text-preset-4 cursor-pointer py-4 transition-colors duration-200 first:pt-0 last:pb-0">All Categories</li>
-      <li class="text-preset-4 cursor-pointer py-4 transition-colors duration-200 first:pt-0 last:pb-0">Food & Drink</li>
-      <li class="text-preset-4 cursor-pointer py-4 transition-colors duration-200 first:pt-0 last:pb-0">Shopping</li>
-      <li class="text-preset-4 cursor-pointer py-4 transition-colors duration-200 first:pt-0 last:pb-0">Transportation</li>
-      <li class="text-preset-4 cursor-pointer py-4 transition-colors duration-200 first:pt-0 last:pb-0">Entertainment</li>
-      <li class="text-preset-4 cursor-pointer py-4 transition-colors duration-200 first:pt-0 last:pb-0">Housing</li>
+      @for (category of categories() ; track $index) {
+      <li
+        class="text-preset-4 cursor-pointer py-4 transition-colors duration-200 first:pt-0 last:pb-0"
+        (click)="selectCategory(category)"
+        (keydown)="selectCategory(category)"
+        tabindex="0">
+        {{ category }}
+      </li>
+      } @empty {
+      <li class="text-preset-4 cursor-pointer py-4 transition-colors duration-200 first:pt-0 last:pb-0">No categories</li>
+      }
     </ul>
   </div>
 </ng-template>
