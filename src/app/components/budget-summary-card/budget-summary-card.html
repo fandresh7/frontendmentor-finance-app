@@ -4,11 +4,19 @@
       <div class="bg-green size-5 rounded-full"></div>
       <h2 class="text-preset-2 text-grey-900">Entertainment</h2>
     </div>
-    <div class="text-grey-300 hover:bg-beige-100 size-8 cursor-pointer rounded-full p-2 transition-colors duration-300">
+    <div
+      class="text-grey-300 hover:bg-beige-100 size-8 cursor-pointer rounded-full p-2 transition-colors duration-300"
+      (click)="toggleDropdown()"
+      (keydown)="toggleDropdown()"
+      tabindex="0"
+      cdkOverlayOrigin
+      #origin="cdkOverlayOrigin">
       <ellipsis-icon class="full" />
     </div>
   </section>
+
   <p class="text-preset-4 text-grey-500">Maximum of $50.00</p>
+
   <progress-bar
     color="#277c78"
     [percentage]="50" />
@@ -77,3 +85,31 @@
     </ul>
   </card>
 </card>
+
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="origin"
+  [cdkConnectedOverlayOpen]="isOpen()"
+  cdkConnectedOverlayHasBackdrop
+  cdkConnectedOverlayBackdropClass="cdk-overlay-transparent-backdrop"
+  (backdropClick)="closeDropdown()"
+  (detach)="closeDropdown()">
+  <div class="max-h-96 max-w-full overflow-y-auto rounded-xl bg-white p-4 shadow-2xl">
+    <ul class="divide-grey-100 divide-y">
+      <li
+        class="text-grey-900 text-preset-4 cursor-pointer py-4 transition-colors duration-200 first:pt-0 last:pb-0"
+        (click)="openModal()"
+        (keydown)="openModal()"
+        tabindex="0">
+        Edit Budget
+      </li>
+      <li
+        class="text-red text-preset-4 cursor-pointer py-4 transition-colors duration-200 first:pt-0 last:pb-0"
+        (click)="openModal()"
+        (keydown)="openModal()"
+        tabindex="0">
+        Delete Budget
+      </li>
+    </ul>
+  </div>
+</ng-template>
