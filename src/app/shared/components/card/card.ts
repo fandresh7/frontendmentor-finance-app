@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core'
+import { ChangeDetectionStrategy, Component, input } from '@angular/core'
 
 @Component({
   selector: 'card',
@@ -6,7 +6,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core'
   templateUrl: './card.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    class: 'rounded-xl bg-white p-4 md:p-6 flex flex-col gap-4'
+    class: 'rounded-xl p-4 md:p-6 flex flex-col gap-4',
+    '[class]': 'background()'
   }
 })
-export class Card {}
+export class Card {
+  background = input<string>('bg-white')
+}

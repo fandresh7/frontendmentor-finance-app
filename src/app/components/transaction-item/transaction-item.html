@@ -1,8 +1,10 @@
 <article class="flex items-center gap-4">
+  @if(avatar()) {
   <img
     class="size-10 rounded-full"
     [src]="avatar()"
     [alt]="name()" />
+  }
 
   <h2 class="text-preset-4-bold text-grey-900 grow">{{ name() }}</h2>
 

@@ -8,7 +8,7 @@ import { ChangeDetectionStrategy, Component, computed, input } from '@angular/co
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TransactionItem {
-  avatar = input.required<string>()
+  avatar = input<string>()
   name = input.required<string>()
   amount = input.required<number>()
   date = input.required<string>()

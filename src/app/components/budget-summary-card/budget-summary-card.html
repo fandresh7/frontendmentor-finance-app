@@ -1,0 +1,79 @@
+<card>
+  <section class="flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <div class="bg-green size-5 rounded-full"></div>
+      <h2 class="text-preset-2 text-grey-900">Entertainment</h2>
+    </div>
+    <div class="text-grey-300 hover:bg-beige-100 size-8 cursor-pointer rounded-full p-2 transition-colors duration-300">
+      <ellipsis-icon class="full" />
+    </div>
+  </section>
+  <p class="text-preset-4 text-grey-500">Maximum of $50.00</p>
+  <progress-bar
+    color="#277c78"
+    [percentage]="50" />
+
+  <section class="grid grid-cols-2 gap-4">
+    <category-item
+      color="#277c78"
+      title="Entertainment"
+      [amount]="50" />
+    <category-item
+      color="#277c78"
+      title="Entertainment"
+      [amount]="50" />
+  </section>
+
+  <card background="bg-beige-100">
+    <card-header
+      title="Latest Spending"
+      link="/transactions"
+      linkText="See All">
+    </card-header>
+
+    <ul
+      role="list"
+      class="divide-grey-500 mt-4 divide-y">
+      <li class="py-4 first:pt-0 last:pb-0">
+        <transaction-item
+          avatar="./images/avatars/emma-richardson.jpg"
+          name="Emma Richardson"
+          [amount]="75.50"
+          date="2024-08-19T14:23:11Z">
+        </transaction-item>
+      </li>
+      <li class="py-4 first:pt-0 last:pb-0">
+        <transaction-item
+          avatar="./images/avatars/savory-bites-bistro.jpg"
+          name="Savory Bites Bistro"
+          [amount]="-55.50"
+          date="2024-08-19T20:23:11Z">
+        </transaction-item>
+      </li>
+      <li class="py-4 first:pt-0 last:pb-0">
+        <transaction-item
+          avatar="./images/avatars/daniel-carter.jpg"
+          name="Daniel Carter"
+          [amount]="-42.30"
+          date="2024-08-18T09:45:32Z">
+        </transaction-item>
+      </li>
+      <li class="py-4 first:pt-0 last:pb-0">
+        <transaction-item
+          avatar="./images/avatars/sun-park.jpg"
+          name="Sun Park"
+          [amount]="120.00"
+          date="2024-08-17T16:12:05Z">
+        </transaction-item>
+      </li>
+      <li class="py-4 first:pt-0 last:pb-0">
+        <transaction-item
+          avatar="./images/avatars/urban-services-hub.jpg"
+          name="Urban Services Hub"
+          [amount]="-65.00"
+          date="2024-08-17T21:08:09Z">
+        </transaction-item>
+      </li>
+    </ul>
+  </card>
+</card>
