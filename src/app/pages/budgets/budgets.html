@@ -4,7 +4,7 @@
     <button class="text-preset-4-bold bg-grey-900 hover:bg-beige-500 cursor-pointer rounded-xl p-4 text-white transition-colors duration-300">+ Add New Budget</button>
   </section>
 
-  <section class="flex flex-col gap-4">
+  <section class="grid grid-cols-1 items-start gap-6 lg:grid-cols-2">
     <card>
       <budgets-chart></budgets-chart>
       <h2 class="text-preset-2 text-grey-900">Spending Summary</h2>
@@ -44,9 +44,12 @@
         </li>
       </ul>
     </card>
-  </section>
 
-  <section>
-    <budget-summary-card></budget-summary-card>
+    <div class="flex flex-col gap-4">
+      <budget-summary-card></budget-summary-card>
+      <budget-summary-card></budget-summary-card>
+      <budget-summary-card></budget-summary-card>
+      <budget-summary-card></budget-summary-card>
+    </div>
   </section>
 </section>
