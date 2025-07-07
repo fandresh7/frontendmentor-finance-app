@@ -5,7 +5,10 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core'
   selector: 'category-summary-item',
   imports: [CurrencyPipe],
   templateUrl: './category-summary-item.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    class: 'relative'
+  }
 })
 export class CategorySummaryItem {
   color = input.required<string>()
