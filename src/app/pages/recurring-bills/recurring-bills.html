@@ -30,4 +30,36 @@
       </li>
     </ul>
   </card>
+
+  <card>
+    <bill-filters />
+
+    <table class="w-full table-fixed text-sm">
+      <thead class="hidden md:table-header-group">
+        <tr class="text-preset-5 text-grey-500">
+          <th class="p-2 text-left">Bill Title</th>
+          <th class="p-2 text-left">Due Date</th>
+          <th class="p-2 text-right">Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(bill of bills; track $index) {
+        <tr
+          bill-row
+          class="border-grey-100 block border-b md:table-row"
+          [image]="bill.image"
+          [title]="bill.title"
+          [dueDate]="bill.dueDate"
+          [amount]="bill.amount"
+          [paid]="bill.paid"
+          [toPaySoon]="bill.toPaySoon"></tr>
+        }
+      </tbody>
+    </table>
+
+    <pagination
+      [total]="bills.length"
+      [currentPage]="1">
+    </pagination>
+  </card>
 </section>

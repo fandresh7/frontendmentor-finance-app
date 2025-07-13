@@ -2,8 +2,7 @@ import { CurrencyPipe, DatePipe } from '@angular/common'
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core'
 
 @Component({
-  selector: 'tr[transaction-row]', // Selecciona elementos tr con el atributo transaction-row
-  standalone: true,
+  selector: 'tr[transaction-row]',
   imports: [CurrencyPipe, DatePipe],
   templateUrl: './transaction-row.html',
   changeDetection: ChangeDetectionStrategy.OnPush
