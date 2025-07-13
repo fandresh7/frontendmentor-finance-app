@@ -1,65 +1,71 @@
 <section class="flex flex-col gap-6">
   <h1 class="text-preset-1 text-grey-900">Recurring Bills</h1>
 
-  <card background="bg-grey-900">
-    <section class="flex items-center gap-6 text-white md:flex-col md:items-start md:gap-8">
-      <recurrent-bills-icon2 class="block md:mt-4" />
+  <section class="flex flex-col gap-6 xl:grid xl:grid-cols-[1fr_2fr]">
+    <section class="flex flex-col gap-6 lg:grid lg:grid-cols-2 xl:flex xl:grow">
+      <card background="bg-grey-900">
+        <section class="flex items-center gap-6 text-white md:flex-col md:items-start md:gap-8">
+          <recurrent-bills-icon2 class="block md:mt-4" />
 
-      <div class="flex flex-col gap-3">
-        <p class="text-preset-4">Total Bills</p>
-        <p class="text-preset-1">{{194.98 | currency:'USD':'symbol':'1.2-2' }}</p>
-      </div>
+          <div class="flex flex-col gap-3">
+            <p class="text-preset-4">Total Bills</p>
+            <p class="text-preset-1">{{194.98 | currency:'USD':'symbol':'1.2-2' }}</p>
+          </div>
+        </section>
+      </card>
+
+      <card>
+        <h2 class="text-preset-3 text-grey-900">Summary</h2>
+
+        <ul class="divide-grey-500/15 divide-y">
+          <li class="flex items-center justify-between gap-4 py-4">
+            <p class="text-preset-5 text-grey-500">Paid Bills</p>
+            <p class="text-preset-5-bold text-grey-900">2 ({{194.98 | currency:'USD':'symbol':'1.2-2' }})</p>
+          </li>
+          <li class="flex items-center justify-between gap-4 py-4">
+            <p class="text-preset-5 text-grey-500">Total Upcoming</p>
+            <p class="text-preset-5-bold text-grey-900">6 ({{1230 | currency:'USD':'symbol':'1.2-2' }})</p>
+          </li>
+          <li class="text-red flex items-center justify-between gap-4 py-4">
+            <p class="text-preset-5">Due Soon</p>
+            <p class="text-preset-5-bold">2 ({{40 | currency:'USD':'symbol':'1.2-2' }})</p>
+          </li>
+        </ul>
+      </card>
     </section>
-  </card>
 
-  <card>
-    <h2 class="text-preset-3 text-grey-900">Summary</h2>
+    <section>
+      <card>
+        <bill-filters />
 
-    <ul class="divide-grey-500/15 divide-y">
-      <li class="flex items-center justify-between gap-4 py-4">
-        <p class="text-preset-5 text-grey-500">Paid Bills</p>
-        <p class="text-preset-5-bold text-grey-900">2 ({{194.98 | currency:'USD':'symbol':'1.2-2' }})</p>
-      </li>
-      <li class="flex items-center justify-between gap-4 py-4">
-        <p class="text-preset-5 text-grey-500">Total Upcoming</p>
-        <p class="text-preset-5-bold text-grey-900">6 ({{1230 | currency:'USD':'symbol':'1.2-2' }})</p>
-      </li>
-      <li class="text-red flex items-center justify-between gap-4 py-4">
-        <p class="text-preset-5">Due Soon</p>
-        <p class="text-preset-5-bold">2 ({{40 | currency:'USD':'symbol':'1.2-2' }})</p>
-      </li>
-    </ul>
-  </card>
+        <table class="w-full table-fixed text-sm">
+          <thead class="hidden md:table-header-group">
+            <tr class="text-preset-5 text-grey-500">
+              <th class="p-2 text-left">Bill Title</th>
+              <th class="p-2 text-left">Due Date</th>
+              <th class="p-2 text-right">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for(bill of bills; track $index) {
+            <tr
+              bill-row
+              class="border-grey-100 block border-b md:table-row"
+              [image]="bill.image"
+              [title]="bill.title"
+              [dueDate]="bill.dueDate"
+              [amount]="bill.amount"
+              [paid]="bill.paid"
+              [toPaySoon]="bill.toPaySoon"></tr>
+            }
+          </tbody>
+        </table>
 
-  <card>
-    <bill-filters />
-
-    <table class="w-full table-fixed text-sm">
-      <thead class="hidden md:table-header-group">
-        <tr class="text-preset-5 text-grey-500">
-          <th class="p-2 text-left">Bill Title</th>
-          <th class="p-2 text-left">Due Date</th>
-          <th class="p-2 text-right">Amount</th>
-        </tr>
-      </thead>
-      <tbody>
-        @for(bill of bills; track $index) {
-        <tr
-          bill-row
-          class="border-grey-100 block border-b md:table-row"
-          [image]="bill.image"
-          [title]="bill.title"
-          [dueDate]="bill.dueDate"
-          [amount]="bill.amount"
-          [paid]="bill.paid"
-          [toPaySoon]="bill.toPaySoon"></tr>
-        }
-      </tbody>
-    </table>
-
-    <pagination
-      [total]="bills.length"
-      [currentPage]="1">
-    </pagination>
-  </card>
+        <pagination
+          [total]="bills.length"
+          [currentPage]="1">
+        </pagination>
+      </card>
+    </section>
+  </section>
 </section>
