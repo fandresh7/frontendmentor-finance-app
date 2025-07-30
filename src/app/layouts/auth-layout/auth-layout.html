@@ -1,1 +1,22 @@
-<router-outlet />
+<section class="grid h-dvh w-full gap-6 p-4 lg:grid-cols-[1.2fr_2fr] lg:items-center">
+  <div class="relative hidden h-full w-full flex-col items-start justify-between overflow-hidden rounded-xl p-10 text-white lg:flex">
+    <img
+      src="./images/illustration-authentication.svg"
+      alt="Authentication illustration"
+      class="absolute inset-0 -z-10 h-full w-full object-cover object-center" />
+
+    <img
+      class="w-40"
+      src="./images/logo.svg"
+      alt="logo" />
+
+    <section class="flex flex-col gap-4">
+      <h2 class="text-preset-1">Keep track of your money and save for your future</h2>
+      <p class="text-preset-4">Personal finance app puts you in control of your spending. Track transactions, set budgets, and add to savings pots easily.</p>
+    </section>
+  </div>
+
+  <section class="mx-auto flex w-full items-center justify-center gap-6 md:max-w-[600px]">
+    <router-outlet class="contents" />
+  </section>
+</section>

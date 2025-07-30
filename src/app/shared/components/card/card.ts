@@ -6,7 +6,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core'
   templateUrl: './card.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    class: 'rounded-xl p-4 md:p-6 flex flex-col gap-4',
+    class: 'rounded-xl p-4 md:p-6 flex flex-col gap-4 w-full',
     '[class]': 'background()'
   }
 })

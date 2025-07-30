@@ -6,6 +6,9 @@ import { EyeIcon, EyeOffIcon } from '@shared/components/icons/icons'
   selector: 'login',
   imports: [Card, EyeIcon, EyeOffIcon],
   templateUrl: './login.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    class: 'w-full block'
+  }
 })
 export class Login {}
