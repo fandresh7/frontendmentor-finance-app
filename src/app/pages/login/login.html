@@ -34,6 +34,13 @@
 
     <button class="text-preset-4-bold bg-grey-900 hover:bg-beige-500 cursor-pointer rounded-xl p-4 text-white transition-colors duration-300">Login</button>
 
-    <p class="text-preset-4 text-grey-500 text-center">Need to create an account? <span class="text-preset-4-bold text-grey-900 cursor-pointer underline">Sign up</span></p>
+    <p class="text-preset-4 text-grey-500 text-center">
+      Need to create an account?
+      <span
+        class="text-preset-4-bold text-grey-900 cursor-pointer underline"
+        [routerLink]="['/auth', 'signup']">
+        Sign up
+      </span>
+    </p>
   </section>
 </card>
