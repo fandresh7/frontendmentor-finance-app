@@ -2,6 +2,7 @@ import { Directive, input } from '@angular/core'
 import { FormControl } from '@angular/forms'
 import { map, of, startWith, merge, switchMap } from 'rxjs'
 import { toSignal, toObservable } from '@angular/core/rxjs-interop'
+import { Option } from '@shared/forms/interfaces/options'
 
 @Directive()
 export class BaseInput {
@@ -14,6 +15,7 @@ export class BaseInput {
   required = input<boolean>(false)
   readonly = input<boolean>(false)
   helpText = input<string>('')
+  options = input<Option[]>([])
 
   // Create reactive observable streams that respond to control input changes
   private controlChanges$ = toObservable(this.control).pipe(

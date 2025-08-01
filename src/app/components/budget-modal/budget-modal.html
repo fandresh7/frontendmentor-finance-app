@@ -5,20 +5,40 @@
 
 <p class="text-preset-4 text-grey-500">{{ data.description }}</p>
 
-<form class="mt-4 flex flex-col gap-4">
+<form
+  id="budget-form"
+  class="mt-4 flex flex-col gap-4"
+  (ngSubmit)="submit()"
+  [formGroup]="form">
   <input-text
     label="Budget Category"
     name="category"
+    formControlName="category"
+    [control]="form.controls.category"
     [required]="true" />
 
   <input-text
     label="Maximum Spend"
     name="amount"
+    formControlName="amount"
+    [control]="form.controls.amount"
     type="number"
     [required]="true" />
 
-  <submit-button
-    [text]="data.edit ? 'Save Changes' : 'Add Budget'"
-    [invalid]="true">
-  </submit-button>
+  <input-select
+    label="Testing"
+    name="test"
+    formControlName="test"
+    [control]="form.controls.test"
+    [options]="options">
+  </input-select>
+
+  <button
+    type="submit"
+    [disabled]="false"
+    [class]="form.invalid 
+      ? 'w-full text-preset-4-bold bg-grey-500 cursor-not-allowed rounded-xl p-4 text-white transition-colors duration-300'
+      : 'w-full text-preset-4-bold bg-grey-900 hover:bg-beige-500 cursor-pointer rounded-xl p-4 text-white transition-colors duration-300'">
+    {{ data.edit ? 'Save Changes' : 'Add Budget' }}
+  </button>
 </form>
