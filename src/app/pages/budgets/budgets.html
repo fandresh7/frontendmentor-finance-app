@@ -1,7 +1,11 @@
 <section class="flex flex-col gap-6">
   <section class="flex flex-wrap items-center justify-between gap-4">
     <h1 class="text-preset-1 text-grey-900">Budgets</h1>
-    <button class="text-preset-4-bold bg-grey-900 hover:bg-beige-500 cursor-pointer rounded-xl p-4 text-white transition-colors duration-300">+ Add New Budget</button>
+    <button
+      class="text-preset-4-bold bg-grey-900 hover:bg-beige-500 cursor-pointer rounded-xl p-4 text-white transition-colors duration-300"
+      (click)="openDialog()">
+      + Add New Budget
+    </button>
   </section>
 
   <section class="grid grid-cols-1 items-start gap-6 lg:grid-cols-2">

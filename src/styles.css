@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import '@angular/cdk/overlay-prebuilt.css';
+
 
 @font-face {
   font-family: 'Public Sans';
@@ -156,4 +158,9 @@
   line-height: var(--leading-150);
   font-weight: 700;
   letter-spacing: 0;
+}
+
+/* Modal */
+.modal {
+  @apply bg-white rounded-xl p-6 w-3xl;
 }

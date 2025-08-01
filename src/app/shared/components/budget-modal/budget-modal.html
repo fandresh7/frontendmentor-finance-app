@@ -1,0 +1,22 @@
+<modal-header
+  [title]="data.title"
+  (closeModal)="closeModal()">
+</modal-header>
+
+<form class="mt-4 flex flex-col gap-4">
+  <input-text
+    label="Budget Category"
+    name="category"
+    [required]="true" />
+
+  <input-text
+    label="Maximum Spend"
+    name="amount"
+    type="number"
+    [required]="true" />
+
+  <submit-button
+    text="Create Budget"
+    [invalid]="true">
+  </submit-button>
+</form>
