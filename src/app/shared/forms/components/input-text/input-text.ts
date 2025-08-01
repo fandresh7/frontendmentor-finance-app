@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core'
+import { ChangeDetectionStrategy, Component, forwardRef } from '@angular/core'
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms'
+import { BaseInput } from '../base-input/base-input'
 
 @Component({
   selector: 'input-text',
@@ -7,10 +9,61 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core'
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'flex flex-col gap-2'
-  }
+  },
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => InputText),
+      multi: true
+    }
+  ]
 })
-export class InputText {
-  label = input.required<string>()
-  name = input.required<string>()
-  type = input<string>('text')
+export class InputText extends BaseInput implements ControlValueAccessor {
+  // Internal state
+  value = ''
+  disabled = false
+  touched = false
+
+  // ControlValueAccessor callbacks
+  private onChange = (value: string) => {
+    void value
+  }
+  private onTouched = () => {
+    // Callback set by registerOnTouched
+  }
+
+  // CSS classes using BaseInputUtils for consistency
+  get inputClasses(): string {
+    return this.getInputClasses(this.control(), this.disabled)
+  }
+
+  // ControlValueAccessor implementation
+  writeValue(value: string): void {
+    this.value = value || ''
+  }
+
+  registerOnChange(fn: (value: string) => void): void {
+    this.onChange = fn
+  }
+
+  registerOnTouched(fn: () => void): void {
+    this.onTouched = fn
+  }
+
+  setDisabledState(isDisabled: boolean): void {
+    this.disabled = isDisabled
+  }
+
+  // Event handlers
+  onInput(event: Event): void {
+    const target = event.target as HTMLInputElement
+    const value = target.value
+    this.value = value
+    this.onChange(value)
+  }
+
+  onBlur(): void {
+    this.touched = true
+    this.onTouched()
+  }
 }

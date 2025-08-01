@@ -1,9 +1,22 @@
 <label
   [attr.for]="name()"
   class="text-preset-5-bold text-grey-500">
-  {{ label() }}
+  {{ label() }}@if (required()) {
+  <span class="ml-1 text-red-500">*</span>
+  }
 </label>
+
 <input
   [attr.type]="type()"
   [id]="name()"
-  class="border-beige-500 text-preset-4 placeholder:text-beige-500 hover:border-grey-900 hover:text-grey-900 focus:border-grey-900 focus:text-grey-900 h-12 w-full rounded-xl border px-6 leading-none focus:outline-none" />
+  [value]="value"
+  [placeholder]="placeholder()"
+  [disabled]="disabled"
+  [readonly]="readonly()"
+  [class]="inputClasses"
+  (input)="onInput($event)"
+  (blur)="onBlur()" />
+
+@if (hasError()) {
+<p class="text-preset-5 text-red-500">{{ errorMessage() }}</p>
+}

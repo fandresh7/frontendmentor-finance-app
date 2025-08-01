@@ -2,21 +2,51 @@
   <section class="flex flex-col gap-6">
     <h1 class="text-preset-1 text-grey-900">Sign Up</h1>
 
-    <input-text
-      label="Name"
-      name="name" />
+    <form
+      [formGroup]="signupForm"
+      (ngSubmit)="onSubmit()"
+      class="flex flex-col gap-6">
+      <input-text
+        label="Name"
+        name="name"
+        placeholder="Enter your full name"
+        formControlName="name"
+        [control]="signupForm.controls.name"
+        [required]="true" />
 
-    <input-text
-      label="Email"
-      name="email"
-      type="email" />
+      <input-text
+        label="Email"
+        name="email"
+        type="email"
+        placeholder="Enter your email address"
+        formControlName="email"
+        [control]="signupForm.controls.email"
+        [required]="true" />
 
-    <input-password
-      label="Create Password"
-      name="password"
-      helpText="Passwords must be at least 8 characters" />
+      <input-password
+        label="Create Password"
+        name="password"
+        placeholder="Enter your password"
+        helpText="Passwords must be at least 8 characters"
+        formControlName="password"
+        [control]="signupForm.controls.password"
+        [required]="true" />
 
-    <button class="text-preset-4-bold bg-grey-900 hover:bg-beige-500 cursor-pointer rounded-xl p-4 text-white transition-colors duration-300">Create Account</button>
+      <button
+        type="submit"
+        class="text-preset-4-bold bg-grey-900 hover:bg-beige-500 cursor-pointer rounded-xl p-4 text-white transition-colors duration-300">
+        Create Account
+      </button>
+
+      <!-- <button
+        type="submit"
+        [disabled]="signupForm.invalid"
+        [class]="signupForm.invalid 
+          ? 'text-preset-4-bold bg-grey-500 cursor-not-allowed rounded-xl p-4 text-white transition-colors duration-300'
+          : 'text-preset-4-bold bg-grey-900 hover:bg-beige-500 cursor-pointer rounded-xl p-4 text-white transition-colors duration-300'">
+        Create Account
+      </button> -->
+    </form>
 
     <p class="text-preset-4 text-grey-500 text-center">
       Already have an account?
