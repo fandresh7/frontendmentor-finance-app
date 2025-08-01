@@ -3,6 +3,8 @@
   (closeModal)="closeModal()">
 </modal-header>
 
+<p class="text-preset-4 text-grey-500">{{ data.description }}</p>
+
 <form class="mt-4 flex flex-col gap-4">
   <input-text
     label="Budget Category"
@@ -16,7 +18,7 @@
     [required]="true" />
 
   <submit-button
-    text="Create Budget"
+    [text]="data.edit ? 'Save Changes' : 'Add Budget'"
     [invalid]="true">
   </submit-button>
 </form>
