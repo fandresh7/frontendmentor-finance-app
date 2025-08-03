@@ -21,10 +21,12 @@
   <input-text
     label="Maximum Spend"
     name="amount"
+    type="number"
+    placeholder="50.00"
     formControlName="amount"
     [control]="form.controls.amount"
-    type="number"
-    [required]="true" />
+    [required]="true"
+    icon="$" />
 
   <input-select
     label="Testing"

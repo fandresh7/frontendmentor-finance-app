@@ -6,6 +6,24 @@
   }
 </label>
 
+@if (icon()) {
+<div class="relative">
+  @if (icon()) {
+  <div class="text-grey-500 pointer-events-none absolute top-1/2 left-4 -translate-y-1/2">{{ icon() }}</div>
+  }
+
+  <input
+    [attr.type]="type()"
+    [id]="name()"
+    [value]="value"
+    [placeholder]="placeholder()"
+    [disabled]="disabled"
+    [readonly]="readonly()"
+    [class]="inputClasses"
+    (input)="onInput($event)"
+    (blur)="onBlur()" />
+</div>
+} @else {
 <input
   [attr.type]="type()"
   [id]="name()"
@@ -16,6 +34,7 @@
   [class]="inputClasses"
   (input)="onInput($event)"
   (blur)="onBlur()" />
+}
 
 <div class="flex flex-wrap justify-between gap-x-2">
   @if (hasError()) {

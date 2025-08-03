@@ -17,6 +17,9 @@ export class BaseInput {
   helpText = input<string>('')
   options = input<Option[]>([])
 
+  // Icon support
+  icon = input<string>('')
+
   // Create reactive observable streams that respond to control input changes
   private controlChanges$ = toObservable(this.control).pipe(
     switchMap(ctrl => {
