@@ -1,13 +1,14 @@
-import { ChangeDetectionStrategy, Component, forwardRef, signal } from '@angular/core'
+import { ChangeDetectionStrategy, Component, forwardRef, signal, TemplateRef, input } from '@angular/core'
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms'
 import { BaseInput } from '../base-input/base-input'
 import { OverlayModule } from '@angular/cdk/overlay'
 import { ChevronDownIcon } from '@shared/components/icons/icons'
 import { Option } from '@shared/forms/interfaces/options'
+import { NgTemplateOutlet } from '@angular/common'
 
 @Component({
   selector: 'input-select',
-  imports: [OverlayModule, ChevronDownIcon],
+  imports: [OverlayModule, ChevronDownIcon, NgTemplateOutlet],
   templateUrl: './select.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
@@ -28,6 +29,9 @@ export class Select extends BaseInput implements ControlValueAccessor {
   touched = false
 
   isOpen = signal<boolean>(false)
+
+  // Template personalizable para las opciones
+  optionTemplate = input<TemplateRef<{ $implicit: Option; selected: boolean }>>()
 
   openDropdown() {
     this.isOpen.set(true)

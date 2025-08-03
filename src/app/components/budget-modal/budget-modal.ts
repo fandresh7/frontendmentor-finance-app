@@ -44,9 +44,11 @@ export class BudgetModal {
   }
 
   options: Option[] = [
-    { value: '1', label: 'Option 1' },
-    { value: '2', label: 'Option 2' },
-    { value: '3', label: 'Option 3' }
+    { value: 'entertainment', label: 'Entertainment', color: '#277C78' },
+    { value: 'bills', label: 'Bills', color: '#F2CDAC' },
+    { value: 'groceries', label: 'Groceries', color: '#82C9D7' },
+    { value: 'dining-out', label: 'Dining Out', color: '#626070' },
+    { value: 'transportation', label: 'Transportation', color: '#C94736' }
   ]
 
   submit() {
