@@ -5,6 +5,7 @@ import { ModalHeader } from '@shared/components/modal-header/modal-header'
 import { Select } from '@shared/forms/components/select/select'
 import { Option } from '@shared/forms/interfaces/options'
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms'
+import { SimpleCheckIcon } from '@shared/components/icons/icons'
 
 interface BudgetModalData {
   title: string
@@ -14,7 +15,7 @@ interface BudgetModalData {
 
 @Component({
   selector: 'budget-modal',
-  imports: [ModalHeader, InputText, Select, ReactiveFormsModule],
+  imports: [ModalHeader, InputText, Select, ReactiveFormsModule, SimpleCheckIcon],
   templateUrl: './budget-modal.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
@@ -32,12 +33,6 @@ export class BudgetModal {
     amount: ['', Validators.required],
     test: ['', Validators.required]
   })
-
-  constructor() {
-    this.form.valueChanges.subscribe(value => {
-      console.log(value)
-    })
-  }
 
   closeModal() {
     this.dialogRef.close()
