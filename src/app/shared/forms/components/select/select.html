@@ -21,7 +21,7 @@
     [class.rotate-180]="isOpen()" />
 </div>
 
-<!-- Input oculto para reactive forms -->
+<!-- Hidden input for reactive forms -->
 <input
   [attr.type]="type()"
   [id]="name()"
@@ -32,9 +32,13 @@
   (blur)="onBlur()"
   tabindex="-1" />
 
-@if (hasError()) {
-<p class="text-preset-5 text-red-500">{{ errorMessage() }}</p>
-}
+<div class="flex flex-wrap justify-between gap-x-2">
+  @if (hasError()) {
+  <p class="text-preset-5 text-red-500">{{ errorMessage() }}</p>
+  } @if(helpText()) {
+  <p class="text-preset-5 text-grey-500 text-end">{{ helpText() }}</p>
+  }
+</div>
 
 <ng-template
   cdkConnectedOverlay
@@ -44,7 +48,7 @@
   cdkConnectedOverlayBackdropClass="cdk-overlay-transparent-backdrop"
   (backdropClick)="closeDropdown()"
   (detach)="closeDropdown()">
-  <ul class="divide-grey-100 max-h-64 min-w-52 divide-y overflow-y-auto rounded-lg bg-white shadow-lg">
+  <ul class="divide-grey-100 min-w-53 divide-y overflow-y-auto rounded-lg bg-white shadow-lg md:min-w-96">
     @for (option of options(); track option.value) {
     <li
       class="text-preset-4 text-grey-900 cursor-pointer px-4 py-3 transition-colors duration-200 outline-none hover:bg-gray-50"

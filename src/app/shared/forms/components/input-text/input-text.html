@@ -17,6 +17,10 @@
   (input)="onInput($event)"
   (blur)="onBlur()" />
 
-@if (hasError()) {
-<p class="text-preset-5 text-red-500">{{ errorMessage() }}</p>
-}
+<div class="flex flex-wrap justify-between gap-x-2">
+  @if (hasError()) {
+  <p class="text-preset-5 text-red-500">{{ errorMessage() }}</p>
+  } @if(helpText()) {
+  <p class="text-preset-5 text-grey-500 text-end">{{ helpText() }}</p>
+  }
+</div>

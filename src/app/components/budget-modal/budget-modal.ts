@@ -47,6 +47,8 @@ export class BudgetModal {
   ]
 
   submit() {
+    this.form.markAllAsTouched()
+    if (this.form.invalid) return
     console.log(this.form.value)
   }
 }

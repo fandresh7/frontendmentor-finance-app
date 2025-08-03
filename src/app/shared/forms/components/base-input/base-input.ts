@@ -1,7 +1,7 @@
 import { Directive, input } from '@angular/core'
 import { FormControl } from '@angular/forms'
 import { map, of, startWith, merge, switchMap } from 'rxjs'
-import { toSignal, toObservable } from '@angular/core/rxjs-interop'
+import { toObservable, toSignal } from '@angular/core/rxjs-interop'
 import { Option } from '@shared/forms/interfaces/options'
 
 @Directive()

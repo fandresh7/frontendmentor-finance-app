@@ -30,7 +30,6 @@ export class Select extends BaseInput implements ControlValueAccessor {
 
   isOpen = signal<boolean>(false)
 
-  // Template personalizable para las opciones
   optionTemplate = input<TemplateRef<{ $implicit: Option; selected: boolean }>>()
 
   openDropdown() {
