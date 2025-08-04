@@ -16,9 +16,7 @@ export class BaseInput {
   readonly = input<boolean>(false)
   helpText = input<string>('')
   options = input<Option[]>([])
-
-  // Icon support
-  icon = input<string>('')
+  hasIcon = input<boolean>(false)
 
   // Create reactive observable streams that respond to control input changes
   private controlChanges$ = toObservable(this.control).pipe(
@@ -72,8 +70,12 @@ export class BaseInput {
   }
 
   getInputClasses(control: FormControl | null, disabled = false): string {
-    const baseClasses =
+    let baseClasses =
       'border-beige-500 text-preset-4 placeholder:text-beige-500 hover:border-grey-900 hover:text-grey-900 focus:border-grey-900 focus:text-grey-900 h-12 w-full rounded-xl border px-6 leading-none focus:outline-none transition-colors duration-200'
+
+    if (this.hasIcon()) {
+      baseClasses += ' pl-10'
+    }
 
     const hasError = control ? control.invalid && (control.dirty || control.touched) : false
     const errorClasses = hasError ? 'border-red-500 hover:border-red-500 focus:border-red-500' : ''

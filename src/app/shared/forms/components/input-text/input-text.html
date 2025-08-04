@@ -6,10 +6,12 @@
   }
 </label>
 
-@if (icon()) {
+@if (hasIcon()) {
 <div class="relative">
-  @if (icon()) {
-  <div class="text-grey-500 pointer-events-none absolute top-1/2 left-4 -translate-y-1/2">{{ icon() }}</div>
+  @if (hasIcon()) {
+  <div class="text-grey-500 pointer-events-none absolute top-1/2 left-4 -translate-y-1/2">
+    <ng-content select="icon"></ng-content>
+  </div>
   }
 
   <input

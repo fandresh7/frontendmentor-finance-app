@@ -7,17 +7,27 @@
 </label>
 
 <div
-  [class]="inputClasses + ' flex items-center justify-between cursor-pointer'"
+  [class]="inputClasses + ' relative flex items-center justify-between cursor-pointer'"
   cdkOverlayOrigin
   #trigger="cdkOverlayOrigin"
   (click)="openDropdown()"
   (keyup.enter)="openDropdown()"
   tabindex="0"
   [attr.aria-label]="label()">
-  <span [class]="value ? 'text-grey-900' : 'text-grey-500'">{{ getSelectedLabel() || placeholder() }}</span>
+  @if (hasIcon()) {
+  <div class="text-grey-500 pointer-events-none absolute top-1/2 left-4 -translate-y-1/2">
+    <ng-content select="icon"></ng-content>
+  </div>
+  }
+
+  <span
+    class="flex-1 text-left"
+    [class]="value ? 'text-grey-900' : 'text-grey-500'">
+    {{ getSelectedLabel() || placeholder() }}
+  </span>
 
   <chevron-down-icon
-    class="text-grey-500 h-4 w-4 transition-transform"
+    class="text-grey-500 block h-4 w-4 transition-transform"
     [class.rotate-180]="isOpen()" />
 </div>
 
