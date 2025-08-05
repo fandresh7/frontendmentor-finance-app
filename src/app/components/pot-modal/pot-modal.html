@@ -1,0 +1,65 @@
+<modal-header
+  [title]="data.title"
+  (closeModal)="closeModal()">
+</modal-header>
+
+<p class="text-preset-4 text-grey-500">{{ data.description }}</p>
+
+<form
+  id="budget-form"
+  class="flex flex-col gap-4"
+  (ngSubmit)="submit()"
+  [formGroup]="form"
+  autocomplete="off">
+  <input-text
+    label="Pot Name"
+    name="pot_name"
+    formControlName="pot_name"
+    [control]="form.controls.pot_name"
+    [required]="true" />
+
+  <input-text
+    label="Target"
+    name="target"
+    type="number"
+    placeholder="50.00"
+    formControlName="target"
+    [control]="form.controls.target"
+    [required]="true"
+    [hasIcon]="true">
+    <span ngProjectAs="icon">$</span>
+  </input-text>
+
+  <input-select
+    label="Theme"
+    name="theme"
+    formControlName="theme"
+    [control]="form.controls.theme"
+    [options]="options"
+    [optionTemplate]="colorOptionTemplate">
+  </input-select>
+
+  <button
+    type="submit"
+    [disabled]="false"
+    [class]="form.invalid 
+      ? 'w-full text-preset-4-bold bg-grey-500 cursor-not-allowed rounded-xl p-4 text-white transition-colors duration-300'
+      : 'w-full text-preset-4-bold bg-grey-900 hover:bg-beige-500 cursor-pointer rounded-xl p-4 text-white transition-colors duration-300'">
+    {{ data.edit ? 'Save Changes' : 'Add Pot' }}
+  </button>
+</form>
+
+<ng-template
+  #colorOptionTemplate
+  let-option
+  let-selected="selected">
+  <div class="flex items-center gap-3">
+    <div
+      class="h-3 w-3 rounded-full"
+      [style.background-color]="option.color"></div>
+    <span [class.font-semibold]="selected">{{ option.label }}</span>
+    @if (selected) {
+    <simple-check-icon class="ml-auto h-4 w-4 text-green-600"></simple-check-icon>
+    }
+  </div>
+</ng-template>
