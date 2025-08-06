@@ -8,6 +8,7 @@ import { ProgressBar } from '@shared/components/progress-bar/progress-bar'
 import { Dialog } from '@angular/cdk/dialog'
 import { PotDeleteModal } from '@components/pot-delete-modal/pot-delete-modal'
 import { PotModal } from '@components/pot-modal/pot-modal'
+import { PotTransactionModal } from '@components/add-to-pot-modal/pot-transaction-modal'
 
 @Component({
   selector: 'pot-card',
@@ -44,6 +45,14 @@ export class PotCard {
     this.closeDropdown()
 
     this.dialog.open(PotDeleteModal, {
+      panelClass: 'modal'
+    })
+  }
+
+  OpenAddToPotModal() {
+    this.closeDropdown()
+
+    this.dialog.open(PotTransactionModal, {
       panelClass: 'modal'
     })
   }

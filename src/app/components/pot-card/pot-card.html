@@ -31,7 +31,11 @@
     </div>
 
     <div class="mt-2 grid grid-cols-2 gap-4">
-      <button class="text-preset-4-bold bg-beige-100 text-grey-900 hover:border-beige-500 cursor-pointer rounded-xl border-2 border-transparent p-4 transition-colors duration-300 hover:bg-white">+ Add Money</button>
+      <button
+        class="text-preset-4-bold bg-beige-100 text-grey-900 hover:border-beige-500 cursor-pointer rounded-xl border-2 border-transparent p-4 transition-colors duration-300 hover:bg-white"
+        (click)="OpenAddToPotModal()">
+        + Add Money
+      </button>
       <button class="text-preset-4-bold bg-beige-100 text-grey-900 hover:border-beige-500 cursor-pointer rounded-xl border-2 border-transparent p-4 transition-colors duration-300 hover:bg-white">Withdraw</button>
     </div>
   </section>

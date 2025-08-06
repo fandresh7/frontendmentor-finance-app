@@ -1,0 +1,49 @@
+<modal-header
+  title="Withdraw from ‘Savings’"
+  (closeModal)="closeModal()">
+</modal-header>
+
+<p class="text-preset-4 text-grey-500">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet.</p>
+
+<section class="flex flex-col gap-2">
+  <div class="flex items-center justify-between gap-4">
+    <p class="text-grey-500 text-preset-4">New Amount</p>
+    <p class="text-grey-900 text-preset-1">$139.00</p>
+  </div>
+
+  <progress-bar-with-target
+    [previousPercentage]="7.95"
+    [targetPercentage]="5.95">
+  </progress-bar-with-target>
+
+  <div class="flex items-center justify-between gap-4">
+    <p class="text-red text-preset-5-bold">5.95%</p>
+    <p class="text-grey-500 text-preset-5">Target of $2,000</p>
+  </div>
+</section>
+
+<form
+  class="flex flex-col gap-2"
+  (ngSubmit)="submit()"
+  [formGroup]="form">
+  <input-text
+    label="Amount to Withdraw"
+    name="withdraw_amount"
+    type="number"
+    placeholder="50.00"
+    formControlName="withdraw_amount"
+    [control]="form.controls.withdraw_amount"
+    [required]="true"
+    [hasIcon]="true">
+    <span ngProjectAs="icon">$</span>
+  </input-text>
+
+  <button
+    type="submit"
+    [disabled]="false"
+    [class]="form.invalid 
+      ? 'w-full text-preset-4-bold bg-grey-500 cursor-not-allowed rounded-xl p-4 text-white transition-colors duration-300'
+      : 'w-full text-preset-4-bold bg-grey-900 hover:bg-beige-500 cursor-pointer rounded-xl p-4 text-white transition-colors duration-300'">
+    Confirm Withdrawal
+  </button>
+</form>

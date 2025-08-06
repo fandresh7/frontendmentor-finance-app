@@ -1,0 +1,12 @@
+@let grayWidthStyle = grayWidth() + '%';
+
+<div
+  class="bg-grey-900 h-full rounded-l-md"
+  [style.width]="grayWidthStyle"></div>
+
+@let colorWidthStyle = colorWidth() + '%';
+
+<div
+  class="ml-0.5 h-full rounded-r-md"
+  [style.width]="colorWidthStyle"
+  [style.background]="color()"></div>
