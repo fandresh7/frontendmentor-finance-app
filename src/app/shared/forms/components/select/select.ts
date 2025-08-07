@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component, forwardRef, signal, TemplateRef, input } from '@angular/core'
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms'
-import { BaseInput } from '../base-input/base-input'
 import { OverlayModule } from '@angular/cdk/overlay'
-import { ChevronDownIcon } from '@shared/components'
-import { Option } from '@shared/forms/interfaces/options'
 import { NgTemplateOutlet } from '@angular/common'
+
+import { BaseInput } from '../base-input/base-input'
+import { ChevronDownIcon } from '@shared/components'
+import { Option } from '@shared/forms'
 
 @Component({
   selector: 'input-select',
