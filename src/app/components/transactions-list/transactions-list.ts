@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core'
-import { Card } from '@shared/components/card/card'
-import { CardHeader } from '@shared/components/card-header/card-header'
+
 import { TransactionItem } from '../transaction-item/transaction-item'
+import { Card, CardHeader } from '@shared/components'
 
 @Component({
   selector: 'transactions-list',

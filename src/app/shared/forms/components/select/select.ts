@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, forwardRef, signal, TemplateRef, in
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms'
 import { BaseInput } from '../base-input/base-input'
 import { OverlayModule } from '@angular/cdk/overlay'
-import { ChevronDownIcon } from '@shared/components/icons/icons'
+import { ChevronDownIcon } from '@shared/components'
 import { Option } from '@shared/forms/interfaces/options'
 import { NgTemplateOutlet } from '@angular/common'
 

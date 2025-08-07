@@ -1,7 +1,8 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core'
 import { RouterOutlet } from '@angular/router'
-import { Sidebar } from '@shared/components/sidebar/sidebar'
-import { CollapseSidebar } from '@shared/services/collapse-sidebar'
+
+import { Sidebar } from '@shared/components'
+import { CollapseSidebar } from '@shared/services'
 
 @Component({
   selector: 'dashboard-layout',

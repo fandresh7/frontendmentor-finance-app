@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core'
+
 import { CategoryItem } from '@components/category-item/category-item'
-import { CardHeader } from '@shared/components/card-header/card-header'
-import { Card } from '@shared/components/card/card'
 import { BudgetsChart } from '../budgets-chart/budgets-chart'
+import { Card, CardHeader } from '@shared/components'
 
 @Component({
   selector: 'bugdets-summary-card',

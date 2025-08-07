@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
-import { CollapseSidebar } from '@shared/services/collapse-sidebar'
+import { CollapseSidebar } from '@shared/services'
 import { HomeIcon, PotsIcon, TransactionsIcon, BudgetsIcon, RecurrentBillsIcon, BackIcon } from '../icons/icons'
 import { SidebarItem } from '../sidebar-item/sidebar-item'
 

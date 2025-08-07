@@ -1,6 +1,7 @@
 import { DialogRef } from '@angular/cdk/dialog'
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
-import { ModalHeader } from '@shared/components/modal-header/modal-header'
+
+import { ModalHeader } from '@shared/components'
 
 @Component({
   selector: 'bugdet-delete-modal',

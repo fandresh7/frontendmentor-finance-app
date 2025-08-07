@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core'
 import { CurrencyPipe } from '@angular/common'
-import { CheckIcon, WarningIcon } from '@shared/components/icons/icons'
+
+import { CheckIcon, WarningIcon } from '@shared/components'
 
 @Component({
   selector: 'tr[bill-row]',

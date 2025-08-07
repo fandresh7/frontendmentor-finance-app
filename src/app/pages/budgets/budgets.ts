@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
 import { Dialog } from '@angular/cdk/dialog'
 
-import { Card } from '@shared/components/card/card'
+import { Card } from '@shared/components'
 import { BudgetsChart } from '@components/budgets-chart/budgets-chart'
 import { CategorySummaryItem } from '@components/category-summary-item/category-summary-item'
 import { BudgetSummaryCard } from '@components/budget-summary-card/budget-summary-card'

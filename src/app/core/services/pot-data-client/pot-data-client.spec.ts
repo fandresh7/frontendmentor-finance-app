@@ -1,13 +1,12 @@
 import { TestBed } from '@angular/core/testing'
+import { PotDataClient } from './pot-data-client'
 
-import { Bugdets } from './bugdets'
-
-describe('Bugdets', () => {
-  let service: Bugdets
+describe('PotDataClient', () => {
+  let service: PotDataClient
 
   beforeEach(() => {
     TestBed.configureTestingModule({})
-    service = TestBed.inject(Bugdets)
+    service = TestBed.inject(PotDataClient)
   })
 
   it('should be created', () => {

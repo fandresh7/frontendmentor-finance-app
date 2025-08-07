@@ -1,13 +1,12 @@
 import { TestBed } from '@angular/core/testing'
+import { BudgetDataClient } from './budget-data-client'
 
-import { Pots } from './pots'
-
-describe('Pots', () => {
-  let service: Pots
+describe('BudgetDataClient', () => {
+  let service: BudgetDataClient
 
   beforeEach(() => {
     TestBed.configureTestingModule({})
-    service = TestBed.inject(Pots)
+    service = TestBed.inject(BudgetDataClient)
   })
 
   it('should be created', () => {

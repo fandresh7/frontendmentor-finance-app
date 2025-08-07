@@ -2,9 +2,8 @@ import { DialogRef } from '@angular/cdk/dialog'
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms'
 
-import { ProgressBarWithTarget } from '@shared/components/progress-bar-with-target/progress-bar-with-target'
-import { ModalHeader } from '@shared/components/modal-header/modal-header'
-import { InputText } from '@shared/forms/components'
+import { ModalHeader, ProgressBarWithTarget } from '@shared/components'
+import { InputText } from '@shared/forms'
 
 @Component({
   selector: 'pot-transaction-modal',

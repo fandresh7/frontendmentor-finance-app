@@ -1,11 +1,9 @@
 import { DIALOG_DATA, DialogRef } from '@angular/cdk/dialog'
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms'
-import { ModalHeader } from '@shared/components/modal-header/modal-header'
-import { InputText } from '@shared/forms/components'
-import { Select } from '@shared/forms/components/select/select'
-import { SimpleCheckIcon } from '@shared/components/icons/icons'
-import { Option } from '@shared/forms/interfaces/options'
+
+import { ModalHeader, SimpleCheckIcon } from '@shared/components'
+import { InputText, Option, Select } from '@shared/forms'
 
 interface PotModalData {
   title: string

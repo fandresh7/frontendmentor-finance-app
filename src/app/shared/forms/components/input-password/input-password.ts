@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, forwardRef, signal } from '@angular/core'
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms'
-import { EyeOffIcon, EyeIcon } from '@shared/components/icons/icons'
+import { EyeOffIcon, EyeIcon } from '@shared/components'
 import { BaseInput } from '../base-input/base-input'
 
 @Component({

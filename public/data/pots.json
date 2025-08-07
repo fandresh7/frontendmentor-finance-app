@@ -1,0 +1,47 @@
+[
+    {
+        "id": "2b0f4a11-1793-44a1-9693-f1a612d1d89f",
+        "name": "Savings",
+        "target": 2000,
+        "total": 159,
+        "theme": "#277C78",
+        "created_at": "2024-06-15T09:00:00Z",
+        "updated_at": "2024-08-03T16:45:00Z"
+    },
+    {
+        "id": "466f92dc-a6ca-4f27-8bfe-8fb1f58d218f",
+        "name": "Concert Ticket",
+        "target": 150,
+        "total": 110,
+        "theme": "#626070",
+        "created_at": "2024-07-01T14:30:00Z",
+        "updated_at": "2024-08-02T10:15:00Z"
+    },
+    {
+        "id": "3f79de3a-4fa1-40df-b4fc-53914b9eb8fd",
+        "name": "Gift",
+        "target": 150,
+        "total": 110,
+        "theme": "#82C9D7",
+        "created_at": "2024-07-05T11:20:00Z",
+        "updated_at": "2024-07-28T13:40:00Z"
+    },
+    {
+        "id": "42c691aa-878f-4df0-97a7-eaa41971f384",
+        "name": "New Laptop",
+        "target": 1000,
+        "total": 10,
+        "theme": "#F2CDAC",
+        "created_at": "2024-06-20T08:15:00Z",
+        "updated_at": "2024-07-15T12:30:00Z"
+    },
+    {
+        "id": "84823c79-7853-44c3-9be2-465379c4c1b3",
+        "name": "Holiday",
+        "target": 1440,
+        "total": 531,
+        "theme": "#826CB0",
+        "created_at": "2024-05-10T15:45:00Z",
+        "updated_at": "2024-08-01T18:20:00Z"
+    }
+]

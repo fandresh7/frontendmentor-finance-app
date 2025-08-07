@@ -1,0 +1,34 @@
+[
+    {
+        "id": "36e10b5d-0031-4070-a232-45c075dc200d",
+        "category": "Entertainment",
+        "maximum": 50,
+        "theme": "#277C78",
+        "created_at": "2024-07-15T10:30:00Z",
+        "updated_at": "2024-08-01T14:20:00Z"
+    },
+    {
+        "id": "5c4a7fb9-03ac-4c2a-ad7b-9e6ef4989d59",
+        "category": "Bills",
+        "maximum": 750,
+        "theme": "#82C9D7",
+        "created_at": "2024-07-10T08:45:00Z",
+        "updated_at": "2024-07-25T16:30:00Z"
+    },
+    {
+        "id": "078f8cb5-948c-4bf7-b965-e64a9ff491e3",
+        "category": "Dining Out",
+        "maximum": 75,
+        "theme": "#F2CDAC",
+        "created_at": "2024-07-12T12:15:00Z",
+        "updated_at": "2024-08-05T09:10:00Z"
+    },
+    {
+        "id": "4de533f4-d4ba-4a6e-b396-75ce11b201f4",
+        "category": "Personal Care",
+        "maximum": 100,
+        "theme": "#626070",
+        "created_at": "2024-07-20T15:00:00Z",
+        "updated_at": "2024-07-30T11:45:00Z"
+    }
+]

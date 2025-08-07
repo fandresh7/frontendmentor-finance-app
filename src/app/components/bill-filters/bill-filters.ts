@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, input, model, signal } from '@angul
 import { OverlayModule } from '@angular/cdk/overlay'
 import { FormsModule } from '@angular/forms'
 
-import { SearchIcon, ChevronDownIcon, DownloadIcon } from '@shared/components/icons/icons'
+import { SearchIcon, ChevronDownIcon, DownloadIcon } from '@shared/components'
 
 @Component({
   selector: 'bill-filters',

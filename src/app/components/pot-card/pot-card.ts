@@ -1,14 +1,12 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core'
 import { OverlayModule } from '@angular/cdk/overlay'
 import { CurrencyPipe } from '@angular/common'
-
-import { Card } from '@shared/components/card/card'
-import { EllipsisIcon } from '@shared/components/icons/icons'
-import { ProgressBar } from '@shared/components/progress-bar/progress-bar'
 import { Dialog } from '@angular/cdk/dialog'
+
+import { PotTransactionModal } from '@components/add-to-pot-modal/pot-transaction-modal'
 import { PotDeleteModal } from '@components/pot-delete-modal/pot-delete-modal'
 import { PotModal } from '@components/pot-modal/pot-modal'
-import { PotTransactionModal } from '@components/add-to-pot-modal/pot-transaction-modal'
+import { Card, EllipsisIcon, ProgressBar } from '@shared/components'
 
 @Component({
   selector: 'pot-card',

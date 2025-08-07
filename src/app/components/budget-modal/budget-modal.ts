@@ -1,11 +1,10 @@
 import { DialogRef, DIALOG_DATA } from '@angular/cdk/dialog'
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
-import { InputText } from '@shared/forms/components'
-import { ModalHeader } from '@shared/components/modal-header/modal-header'
-import { Select } from '@shared/forms/components/select/select'
-import { Option } from '@shared/forms/interfaces/options'
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms'
-import { SimpleCheckIcon } from '@shared/components/icons/icons'
+
+import { InputText, Option } from '@shared/forms'
+import { ModalHeader, SimpleCheckIcon } from '@shared/components'
+import { Select } from '@shared/forms/components'
 
 interface BudgetModalData {
   title: string

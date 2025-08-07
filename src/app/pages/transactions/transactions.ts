@@ -1,9 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core'
 
-import { TransactionsFilters } from '@components/transactions-filters/transactions-filters'
-import { TransactionRow } from '@components/transaction-row/transaction-row'
-import { Pagination } from '@shared/components/pagination/pagination'
-import { Card } from '@shared/components/card/card'
+import { TransactionsFilters, TransactionRow } from '../../components'
+import { Pagination, Card } from '@shared/components'
 
 @Component({
   selector: 'transactions',

@@ -1,9 +1,8 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms'
-import { Card } from '@shared/components/card/card'
 import { RouterLink } from '@angular/router'
-import { InputPassword } from '@shared/forms/components/input-password/input-password'
-import { InputText } from '@shared/forms/components/input-text/input-text'
+import { Card } from '@shared/components'
+import { InputPassword, InputText } from '@shared/forms'
 
 @Component({
   selector: 'signup',

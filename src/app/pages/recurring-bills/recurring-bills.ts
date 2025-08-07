@@ -1,11 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core'
 import { CurrencyPipe } from '@angular/common'
 
-import { RecurrentBillsIcon2 } from '@shared/components/icons/icons'
-import { Card } from '@shared/components/card/card'
-import { BillFilters } from '@components/bill-filters/bill-filters'
-import { BillRow } from '@components/bill-row/bill-row'
-import { Pagination } from '@shared/components/pagination/pagination'
+import { BillFilters, BillRow } from '../../components'
+import { RecurrentBillsIcon2, Card, Pagination } from '@shared/components'
 
 @Component({
   selector: 'recurring-bills',
